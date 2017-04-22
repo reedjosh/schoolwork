@@ -1,0 +1,58 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Andrady(2003)]{pl_en}
+Anthony~L. Andrady.
+\newblock \emph{Plastics and the environment}.
+\newblock Wiley-Interscience, 2003.
+
+\bibitem[Plastic(2011)]{what_plastics}
+Professor Plastic.
+\newblock What are plastics?, June 2011.
+\newblock URL
+  \url{https://www.plasticsmakeitpossible.com/about-plastics/types-of-plastics/what-are-plastics/}.
+
+\bibitem[Meikle(1995)]{hist_plastics}
+Jeffrey~L. Meikle.
+\newblock \emph{American plastic: a cultural history}.
+\newblock Rutgers University Press, New Brunswick, N.J., 1995.
+
+\bibitem[Johnson(2016)]{biodiverse}
+Chris Johnson.
+\newblock Ocean plastics pollution, 2016.
+
+\bibitem[Myers(2012)]{ehn}
+Pete Myers.
+\newblock The environmental toll of plastics.
+\newblock 2012.
+
+\bibitem[Rochman and Browne(2013)]{nature}
+Chelsea~M. Rochman and Mark~Anthony Browne.
+\newblock Classify plastic waste as hazardous: policies for managing plastic
+  debris are outdated and threaten the health of people and
+  wildlife.({COMMENT}).
+\newblock \emph{Nature}, 494\penalty0 (7436):\penalty0 169, 2013.
+
+\bibitem[EIA(2015)]{eia}
+EIA.
+\newblock How much oil is used to make plastic?, 2015.
+\newblock URL \url{https://www.eia.gov/tools/faqs/faq.cfm?id=34\&t=6}.
+
+\bibitem[Carl()]{super}
+David Carl.
+\newblock Plastic decay rates.
+\newblock URL
+  \url{http://cmore.soest.hawaii.edu/cruises/super/biodegradation.htm}.
+
+\bibitem[Rochman et~al.(2013)Rochman, Hoh, Hentschel, and Kaye]{long_term}
+Chelsea~M. Rochman, Eunha Hoh, Brian~T. Hentschel, and Shawn Kaye.
+\newblock Long-term field measurement of sorption of organic contaminants to
+  five types of plastic pellets: implications for plastic marine debris.
+\newblock \emph{Environmental science \& technology}, 47\penalty0 (3):\penalty0
+  1646--54, 2013.
+
+\end{thebibliography}

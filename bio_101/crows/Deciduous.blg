@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Deciduous.aux
+The style file: unsrtnat.bst
+Database file #1: Biome.bib
+I was expecting a `,' or a `}'---line 52 of file Biome.bib
+ :  
+ :  author = {Paukert, Ryan}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty author in dd
+Warning--empty author in green_central
+Warning--empty journal in green_central
+You've used 6 entries,
+            2481 wiz_defined-function locations,
+            585 strings with 5198 characters,
+and the built_in function-call counts, 1732 in all, are:
+= -- 157
+> -- 35
+< -- 2
++ -- 22
+- -- 10
+* -- 124
+:= -- 248
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 11
+chr.to.int$ -- 6
+cite$ -- 12
+duplicate$ -- 107
+empty$ -- 196
+format.name$ -- 13
+if$ -- 377
+int.to.chr$ -- 1
+int.to.str$ -- 7
+missing$ -- 6
+newline$ -- 37
+num.names$ -- 9
+pop$ -- 56
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 64
+stack$ -- 0
+substring$ -- 56
+swap$ -- 13
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 39
+warning$ -- 3
+while$ -- 10
+width$ -- 0
+write$ -- 80
+(There was 1 error message)

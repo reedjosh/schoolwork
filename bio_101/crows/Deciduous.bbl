@@ -1,0 +1,43 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Yahner(2000)]{dec_eco}
+Richard~H. Yahner.
+\newblock \emph{Eastern Deciduous Forest Ecology and Wildlife Conservation}.
+\newblock Wildlife {Habitats}. University of Minnesota Press, Minneapolis,
+  2000.
+
+\bibitem[dd(2014)]{dd}
+The downside of dams.
+\newblock \emph{Scientific American}, 2014.
+\newblock URL
+  \url{https://www.scientificamerican.com/article/how-do-dams-hurt-rivers/}.
+
+\bibitem[Carr(2009)]{population_deforrest}
+David Carr.
+\newblock Population and deforestation: why rural migration matters.
+\newblock \emph{Progress in Human Geography}, 33\penalty0 (3):\penalty0
+  355--378, 2009.
+
+\bibitem[gre(2008)]{green_central}
+The green of central maine : Image of the day.
+\newblock April 2008.
+\newblock URL \url{http://earthobservatory.nasa.gov/IOTD/view.php?id=80390}.
+
+\bibitem[mal(2016)]{malus}
+Adaptations - malus domestica, 2016.
+\newblock URL
+  \url{http://bioweb.uwlax.edu/bio203/s2012/paukert_ryan/adaptation.htm}.
+
+\bibitem[Zimmer et~al.(2005)Zimmer, Kautz, and Topp]{woodlice}
+Martin Zimmer, Guido Kautz, and Werner Topp.
+\newblock Do woodlice and earthworms interact synergistically in leaf litter
+  decomposition?
+\newblock \emph{Functional Ecology}, 19\penalty0 (1):\penalty0 7--16, February
+  2005.
+
+\end{thebibliography}

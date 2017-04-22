@@ -1,0 +1,66 @@
+
+\documentclass[a4paper]{article}
+
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Economics 201 HW 3}
+\author{Joshua Reed}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Article 1}
+\textbf{Tyrone business fined for water pollution ‘harmful to fish}
+
+
+\subsection{Identify the externality discussed in the story.}
+The externality is the negative impact upon the fish by the suspended solids produced by the Tyrone business.
+
+\subsection{Is this a positive or a negative externality?}
+This is a negative externality.
+
+\subsection{Who causes the externality and who is impacted by it?}
+The externality was caused by the Tyrone business. The fish have paid the external cost by being unable to reproduce properly, and becoming more easily infected.
+
+
+
+\section{Article 2}
+\textbf{Noise pollution from airports may have direct impact on health}
+
+
+\subsection{Identify the externality discussed in the story.}
+The impact upon the health of nearby residencts caused by the noise pollution of airports.
+
+\subsection{Is this a positive or a negative externality?}
+This is a negative externality.
+
+\subsection{Who causes the externality and who is impacted by it?}
+The externality is cause by air traffic. The people impacted are nearby residents who have paid the negative external cost to their health. 
+
+
+\section{Article 3}
+\textbf{LeConomics: Is the economic impact of LeBron James return to Cleveland more than a feeling?}
+
+
+\subsection{Identify the externality discussed in the story.}
+The increase in economic activity in the Cleveland area.
+
+\subsection{Is this a positive or a negative externality?}
+This is a positive externality.
+
+\subsection{Who causes the externality and who is impacted by it?}
+This externality is caused by LeBron James, and the NBA franchise. Clearly Cleveland residents and businesses recieve the external benefit.
+
+\end{document}
+
+
+
+
+
+

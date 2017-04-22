@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: labResearchPaper.aux
+The style file: unsrtnat.bst
+Database file #1: Plastics.bib
+Warning--empty journal in ehn
+Warning--empty year in super
+You've used 9 entries,
+            2481 wiz_defined-function locations,
+            601 strings with 5617 characters,
+and the built_in function-call counts, 2607 in all, are:
+= -- 211
+> -- 91
+< -- 8
++ -- 44
+- -- 26
+* -- 147
+:= -- 415
+add.period$ -- 26
+call.type$ -- 9
+change.case$ -- 16
+chr.to.int$ -- 9
+cite$ -- 11
+duplicate$ -- 150
+empty$ -- 281
+format.name$ -- 37
+if$ -- 556
+int.to.chr$ -- 1
+int.to.str$ -- 10
+missing$ -- 7
+newline$ -- 52
+num.names$ -- 27
+pop$ -- 97
+preamble$ -- 1
+purify$ -- 9
+quote$ -- 0
+skip$ -- 102
+stack$ -- 0
+substring$ -- 52
+swap$ -- 18
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 57
+warning$ -- 2
+while$ -- 21
+width$ -- 0
+write$ -- 114
+(There were 2 warnings)

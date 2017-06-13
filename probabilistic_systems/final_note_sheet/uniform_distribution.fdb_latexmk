@@ -1,0 +1,13 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "uniform_distribution.xdv" "uniform_distribution.pdf" "uniform_distribution" 0
+  "uniform_distribution.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "uniform_distribution.pdf"
+["xelatex"] 1497303740 "uniform_distribution.tex" "uniform_distribution.xdv" "uniform_distribution" 1497303740
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1492575665 31661 3832dc67fcae1bb0c47594ea86c25797 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1495668131 4105407 4a1e67b5b761835f2cb1647af0c5a21c ""
+  "uniform_distribution.aux" 1497286485 8 a94a2480d3289e625eea47cd1b285758 ""
+  "uniform_distribution.tex" 1497303739 481 ef42ccb7f13b074624eec534f940ecbb ""
+  (generated)
+  "uniform_distribution.xdv"
+  "uniform_distribution.log"

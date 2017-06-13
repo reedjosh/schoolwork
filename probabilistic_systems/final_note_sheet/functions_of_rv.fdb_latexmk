@@ -1,0 +1,13 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "functions_of_rv.xdv" "functions_of_rv.pdf" "functions_of_rv" 0
+  "functions_of_rv.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "functions_of_rv.pdf"
+["xelatex"] 1497317289 "functions_of_rv.tex" "functions_of_rv.xdv" "functions_of_rv" 1497317289
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1492575665 31661 3832dc67fcae1bb0c47594ea86c25797 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1495668131 4105407 4a1e67b5b761835f2cb1647af0c5a21c ""
+  "functions_of_rv.aux" 1497307251 8 a94a2480d3289e625eea47cd1b285758 ""
+  "functions_of_rv.tex" 1497317289 3304 74825a325c82a5780731212d7e57b40a ""
+  (generated)
+  "functions_of_rv.xdv"
+  "functions_of_rv.log"

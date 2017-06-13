@@ -1,0 +1,13 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "triangular_distribution.xdv" "triangular_distribution.pdf" "triangular_distribution" 0
+  "triangular_distribution.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "triangular_distribution.pdf"
+["xelatex"] 1497295127 "triangular_distribution.tex" "triangular_distribution.xdv" "triangular_distribution" 1497295127
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1492575665 31661 3832dc67fcae1bb0c47594ea86c25797 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1495668131 4105407 4a1e67b5b761835f2cb1647af0c5a21c ""
+  "triangular_distribution.aux" 1497289133 8 a94a2480d3289e625eea47cd1b285758 ""
+  "triangular_distribution.tex" 1497294768 516 eb1f75ba39e330de8e8a59125d7151d7 ""
+  (generated)
+  "triangular_distribution.log"
+  "triangular_distribution.xdv"

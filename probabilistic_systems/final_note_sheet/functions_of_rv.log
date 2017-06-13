@@ -1,0 +1,32 @@
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xelatex 2017.5.24)  12 JUN 2017 18:28
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**functions_of_rv.tex
+(./functions_of_rv.tex
+LaTeX2e <2017/01/01> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+! Undefined control sequence.
+l.1 \section
+            *{Functions of Random Variables}
+? 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \section*
+             {Functions of Random Variables}
+? x
+ 
+Here is how much of TeX's memory you used:
+ 5 strings out of 493068
+ 207 string characters out of 6141028
+ 55792 words of memory out of 5000000
+ 4024 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1347 hyphenation exceptions out of 8191
+ 5i,0n,4p,64b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

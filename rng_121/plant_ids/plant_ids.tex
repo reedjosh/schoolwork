@@ -1,0 +1,40 @@
+\documentclass{article}
+\newcommand{\myitem}[1]{\olditem\underline{#1}}
+
+\newenvironment{myitemize}{\itemize
+  \setcounter{enumi}{0}%
+  \let\olditem=\item
+  \let\item=\myitem}{\enditemize} 
+
+\newcommand\textbox[1]{%
+  \parbox{.333\textwidth}{#1}%
+}
+
+\newcommand\pitem[4]{\noindent{\bfseries#1}\textbox{\hfil\small#2}\textbox{\small#3}\textbox{\hfil \noindent \tiny#4} \\ \vspace{-2mm}\hrule\vspace{5mm}}
+
+\begin{document}
+\noindent
+{\bfseries Plant IDs}\\
+Joshua Reed\\
+RNG 121 Wildland Ecology\\
+Fall, 2017\\
+
+
+{\bfseries\noindent\textbox{\hfil Common Name}\textbox{\hfil Scientific Name}\textbox{\hfil  Characteristics}\textbox{} \\}
+
+\pitem{A}{Antelope Bitterbrush}{Purshia Tridenta}{Shrub, Fascicled Leaves and Flowers, Terminates in Short Branchlets}
+\pitem{B}{Western Yarrow}{Achillea millefolium L.}{Forb, arising singly or loose cluster, crowded floral top}
+\pitem{C}{Idaho fescue}{Festuca idahoensis Elmer}{Loosely Contracted Narrow Panicle, Basal Sheaths}
+\pitem{D}{Indian Ricegrass}{Stipa hymendoides Roemer \& Schultes}{Diffuse Panicle, Stiffly Erect culms}
+\pitem{E}{Budsage}{Artemisia spinescens}{Disk and Ray Flowers, Bark}
+\pitem{F}{Arrowleaf balsamroot}{Balsamorhiza sagittata}{Ray Flowers 13-21, with Disk Flowers, Broad Leaves}
+\pitem{G}{Honey Mesquite}{Prosopis gladulosa}{Leaflets in Pairs, Zig Zag Twigs, Distinct Inflorescences}
+\pitem{H}{Buffalograss}{Buchloe dactyloides}{Cluster bur-like spikelets, Wiry stolons}
+\pitem{I}{Tailcup Lupine}{Lupinus caudatus Kellogg}{Violet Corolla, Distinctive Leaflets}
+\pitem{J}{Cheatgrass}{Bromus tectorum L.}{Nodding Panicle, Pubescent Sheaths}
+\pitem{K}{Douglas RabbitBrush}{Chysothamnus viscidiflourus}{Sessile Leaves Alternate, Distinctive Head}
+\pitem{L}{Crested Wheatgrass}{Agropyron Cristatum}{Single dense ordered spikelets}
+\pitem{M}{Tall LarkSpur}{Delphinium Occidentale}{Many Flowered, with Bladed Leaves}
+\pitem{N}{Creosotebush}{Larrea tridentata}{Apex, bifoliate leaves, Stamens}
+\pitem{O}{No Match}{}{}
+\end{document}

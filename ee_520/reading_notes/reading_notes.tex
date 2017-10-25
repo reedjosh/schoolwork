@@ -1,0 +1,100 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\title{Probability, Statistics, and Random Processes for Engineers --- Reading Notes}
+\author{Joshua Reed}
+\begin{document}
+\maketitle
+
+\section{Introduction to Probability}\label{sec:introduction_to_probability}
+\section{Random Variables}\label{sec:random_variables}
+\subsection{Introductin}\label{sub:introductin}
+\subsection{Definition of a RV}\label{sub:introductin_label_sub_introductin}
+\subsection{Cumulative Distributino Funciton}\label{sub:cumulative_distributino_funciton}
+\subsection{Probability Density Function}\label{sub:probability_density_function}
+\subsection{Continuous, Discrete, and Mixed Random Variables}\label{sub:continuous_discrete_and_mixed_random_variables}
+\subsection{Contitional and Joint Distributions and Densities}\label{sub:contitional_and_joint_distributions_and_densities}
+$F_X(x|B)=\frac{P[X\leq x]\cap P[B]}{P[B]}$\\
+$f_X(x|B)\stackrel{\Delta}{=}\frac{P[X\leq x]\cap P[B]}{P[B]}$
+\subsubsection{EX.\@ 2.6--1 Evaluating Conditional CDFs}\label{ssub:evaluating_conditional_cdfs}
+\hrule\vspace{2mm}
+
+For the event B $\{X\leq 10\}$, the set $\Omega$ is split above and below $x=10$. As such, this should be solved piecewise.
+
+For $x\geq 10$, $P[X\leq x, X \leq 10]=P[X\leq 10]$.
+\begin{align*}
+F_X(x|\{X \leq 10\})&= \frac{P[X\leq x, X \leq 10]}{P[X\leq 10]}\\
+&= \frac{P[X \leq 10]}{P[X\leq 10]}\\
+&= 1
+\end{align*}
+
+And for $x\leq 10$, $P[X\leq x, X \leq 10]=P[X\leq x]$.
+\begin{align*}
+F_X(x|\{X \leq 10\})&= \frac{P[X\leq x, X \leq 10]}{P[X\leq 10]}\\
+&= \frac{P[X \leq x]}{P[X\leq 10]}\\
+\end{align*}
+\hrule
+
+\subsubsection*{EX.\@ 2.6--2 Poisson conditioned on even}\label{ssub:poisson_conditioned_on_even}
+\hrule\vspace{2mm}
+
+\hrule\vspace{2mm}
+
+
+\subsubsection*{Weighted sum of conditionals}\label{ssub:poisson_conditioned_on_even}
+Distribution as a weighted sum of conditional distribution functions.
+$$F_X(x)=\sum_{i=1}^{n}F_X(x|A_i)P[A_i]$$
+
+\subsubsection*{EX.\@ 2.6--3 Defective Chips}\label{ssub:poisson_conditioned_on_even}
+\hrule\vspace{2mm}
+One bad chip for every five. Defective Chips (DC) have ttf X which obeys the CDF
+$$F_X(x|DC)=(1-e^{\frac{-x}{2}})u(x)$$
+And good chips (GC) have ttf
+$$F_X(x|DC)=(1-e^{\frac{-x}{10}})u(x)$$
+What is the probability the chip will fail before six months?
+
+The unconditional CDF as from the above equation is,
+\begin{align*}
+F_X(x)&=F_X(x|DC)(P[DC]) + F_X(x|GC)P[GC]\\
+&= (1-e^{\frac{-x}{2}}u(x))\left(\frac{1}{6} \right) + (1-e^{\frac{-x}{10}}u(x))\left(\frac{5}{6}  \right)\\
+F_X(6)&= (1-e^{\frac{-6}{2}}u(x))\left(\frac{1}{6} \right) + (1-e^{\frac{-6}{10}}u(x))\left(\frac{5}{6}  \right)\\
+\end{align*}
+
+\hrule
+
+\subsubsection*{Bayes' formula for probability density functions}\label{ssub:bayes_formula_for_probability_density_functions}
+$$P[B]=\int_{-\infty}^\infty P[B|X=x]f_X(x)dx$$
+
+\hrule
+
+
+\subsubsection*{EX.\@ 2.6--4 Detecting a closed switch}\label{ssub:poisson_conditioned_on_even}
+\hrule\vspace{2mm}
+
+This uses the error function in a confusing manner. Still it is a good example of conditional probability and Bayes'.
+
+
+\subsubsection*{Poisson Transform}\label{ssub:poisson_transform}
+Doubly Stochastic Event and from 
+$$F_X(x)=\sum_{i=1}^{n}F_X(x|A_i)P[A_i]$$
+Can get a distribution for a poisson process for which $\mu$ is the a random variable.
+
+\subsubsection*{EX.\@ 2.6--5 Poisson Transform in optical comms}\label{ssub:ex_@_2_6_5_poisson_transform}
+\hrule\vspace{2mm}
+\hrule
+
+\subsubsection{Joint Distribution and Densities}\label{ssub:joint_distribution_and_densities}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+\end{document}

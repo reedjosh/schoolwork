@@ -1,0 +1,124 @@
+\section*{Distributions}
+\subsection*{Binomial }
+
+\subsubsection*{General}
+$X$ = the number of successes in n trials.
+This is n trials of a Bernoulli random variable.
+
+\subsubsection*{Probability Mass Function}
+$P\{X=k\} = \binom{n}{k}p^kq^{n-k}$, for $k=0,1,2,...,n,$ where $\binom{n}{k}=\frac{n!}{k!(n-k)!}$
+
+\subsubsection*{Mean}
+$m_x=np$
+
+\subsubsection*{Variance}
+$Var(x)=np(1-p)$
+    
+\subsection*{Uniform }
+
+\subsubsection*{General}
+$X$ has equal likeliness of taking any value in the interval $[a,b]$
+
+\subsubsection*{Probability Density Function}
+$f_x(u) = \frac{1}{b-a}$, for $a<u<b$, and is 0 elsewhere
+
+\subsubsection*{Cumulative Distribution Function}
+\[ F_x(u)=
+  \begin{cases} 
+      0,               &     u < a \\
+      \frac{u-a}{b-a}, & a < u < b \\
+      1,               & b < u 
+   \end{cases}
+\]
+
+\subsubsection*{Mean}
+$m_x=(a+b)/2 $ 
+
+\subsubsection*{Variance}
+$Var(X)=\frac{(b-a)^2}{12}$
+    
+
+\subsection*{Triangular }
+
+\subsubsection*{General}
+Upon adding two uniform distributions, we get the triangular density function. The function only has value over $[2a,2b]$
+
+\subsubsection*{Density}
+\[ f_x(\alpha)=
+  \begin{cases} 
+    \frac{\alpha-2a}{(b-a)^2}, & 2a<\alpha<(a+b) \\
+    \frac{2b-\alpha}{(b-a)^2}, & (a+b)<\alpha<(2b) \\
+    0,                         & otherwise
+  \end{cases}
+\]
+
+\subsubsection*{Cumulative }
+This was not listed in the summary, and I need to review to understand why.
+    
+
+\subsection*{Exponential }
+
+\subsubsection*{General}
+$X$ is the time to arrival or time to failure, where arrival rate is $\lambda$ \\
+$X$ can also be viewed as departure time with departure rate $\mu$
+
+\subsubsection*{Probability Density Function}
+$f_x(t) = \lambda e^{-\lambda t}$, for $t>0$, and is $0$ elsewhere.
+
+\subsubsection*{Cumulative Distribution Function}
+$F_x(t) = 1-e{-\lambda t}$, for $t\geq0$, and is $0$ elsewhere.
+
+\subsubsection*{Mean and Variance}
+$m_x=\sigma_x=1/\lambda$
+    
+\subsection*{Gaussian }
+
+\subsubsection*{General}
+The normal distribution
+
+\subsubsection*{Probability Density Function}
+With mean $m$ and standard deviation $\sigma$ \\
+$f_x(u)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(u-m)^2}{2\sigma^2}}$ \\
+Unit Gaussian (normal) $\sigma = 1$, $m=0$ \\
+$f_x(u)=\frac{1}{\sqrt{2\pi}}e^{-\frac{u^2}{2}}$
+
+\subsubsection*{Unit Gaussian Cumulative Distribution $\phi(u)$}
+$\phi(u)$ was used to compute the following \\
+$P\{a<X<b\}=\phi(\frac{b-m}{\sigma})-\phi(\frac{a-m}{\sigma})$
+
+\subsubsection*{Mean and Variance}
+$m$ and $\sigma$ are the mean and standard deviation \\
+$\sigma_x^2$ is the variance
+    
+
+\subsection*{Geometric }
+
+\subsubsection*{General}
+$X$ is the number of trials before the first success \\
+$p$ is the probability of success
+
+\subsubsection*{Mass Function}
+$P\{X=k\} = p(1-p)^{k-1}$, for $k=1,2,3,...$
+
+\subsubsection*{Mean}
+$m_x=1/p$
+
+\subsubsection*{Variance}
+$Var(X)=(1-p)/p^2$
+
+    
+
+\subsection*{Poisson }
+
+\subsubsection*{General}
+$X$ is the number of arrivals in a time interval $t$ \\
+$\lambda$ is the arrival rate
+
+\subsubsection*{Mass Function}
+$P\{X=k\}=\frac{(\lambda t)^k}{k!}e^{\lambda t}$, for $k=0,1,2,3,...$
+
+\subsubsection*{Mean and Variance}
+$m_x= Var(X) = \lambda t$
+    
+
+

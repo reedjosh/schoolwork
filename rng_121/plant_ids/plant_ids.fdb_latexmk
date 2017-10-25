@@ -1,0 +1,16 @@
+# Fdb version 3
+["xdvipdfmx"] 1507611291 "plant_ids.xdv" "plant_ids.pdf" "plant_ids" 1507611291
+  "plant_ids.xdv" 1507611291 14244 c5e3c3c1487126336fbec3e959d2ad03 "xelatex"
+  (generated)
+  "plant_ids.pdf"
+["xelatex"] 1507611290 "plant_ids.tex" "plant_ids.xdv" "plant_ids" 1507611291
+  "/usr/share/texmf-dist/tex/latex/base/article.cls" 1501615465 19821 310da678527a7dfe2a02c88af38079b7 ""
+  "/usr/share/texmf-dist/tex/latex/base/size10.clo" 1501615465 8292 e897c12e1e886ce77fe26afc5d470886 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1501615481 32585 d82bbcf7626b7842c87671687479e852 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1501702505 4066390 b9cb9b2d6114812c7e8e114b80fd7e40 ""
+  "plant_ids.aux" 1507611291 8 a94a2480d3289e625eea47cd1b285758 ""
+  "plant_ids.tex" 1507611290 1993 0a73c4eb00707e59f46b88db2d4a1e38 ""
+  (generated)
+  "plant_ids.aux"
+  "plant_ids.xdv"
+  "plant_ids.log"

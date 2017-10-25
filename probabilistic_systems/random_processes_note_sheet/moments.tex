@@ -1,0 +1,39 @@
+\section*{Moments}
+\subsection*{First}
+
+\subsubsection*{General}
+The first moment is the mean of the distribution. Sometimes refered to as the center of mass.
+
+\subsubsection*{Formula}
+Where $p(x)$ is the probabilty of the outcome $x$ occuring.
+$\mu_x=E\{X\}=\int p(x)xdx$\\
+And applies via a sum for the discrete case.
+
+\subsection*{N\textsuperscript{th} Moment}
+$E\{X^n\}=\int p(x)x^ndx$\\
+
+
+\subsection*{Variance of $X$}    
+
+$\sigma_x^2 = E\{[X-m_x]^2\}=E\{X^2\}-\mu_x^2$
+
+\subsubsection*{Properties}
+If $Y=aX+b$, \\ 
+then $m_y=am_x+b$ \\
+and 
+$\sigma_y^2=a^2\sigma_x^2$
+
+\subsection*{Expectations}
+\subsubsection*{General}
+The expectation $E$ of a function $g$ of a random variable $x$, $E\{g(X)\}$: \\
+$E\{g(X)\}=\int_{-\infty}^{\infty}g(u)f_x(u)du$ \\
+A sum can be substituted for the integral in the discrete case unless using impulse functions
+
+\subsubsection*{Properties}
+$E\{C\}=C$ \\
+$E\{ag(X)+bh(X)\}=aE\{g(x)\}+bE\{h(X)\}$ \\
+If $g(X)\geq 0$, then $E\{g(X)\} \geq 0$
+
+
+    
+

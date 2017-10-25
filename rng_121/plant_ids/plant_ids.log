@@ -1,0 +1,138 @@
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2017.8.2)  9 OCT 2017 21:54
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**plant_ids.tex
+(./plant_ids.tex
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (./plant_ids.aux)
+\openout1 = `plant_ids.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--21
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 23.
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+
+Overfull \hbox (8.3373pt too wide) in paragraph at lines 25--25
+\TU/lmr/bx/n/10 A$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (7.8273pt too wide) in paragraph at lines 26--26
+\TU/lmr/bx/n/10 B$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (7.95729pt too wide) in paragraph at lines 27--27
+\TU/lmr/bx/n/10 C$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (8.4673pt too wide) in paragraph at lines 28--28
+\TU/lmr/bx/n/10 D$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (7.20729pt too wide) in paragraph at lines 29--29
+\TU/lmr/bx/n/10 E$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (6.8873pt too wide) in paragraph at lines 30--30
+\TU/lmr/bx/n/10 F$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (8.68729pt too wide) in paragraph at lines 31--31
+\TU/lmr/bx/n/10 G$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (8.6473pt too wide) in paragraph at lines 32--32
+\TU/lmr/bx/n/10 H$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (4.0073pt too wide) in paragraph at lines 33--33
+\TU/lmr/bx/n/10 I$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (5.5873pt too wide) in paragraph at lines 34--34
+\TU/lmr/bx/n/10 J$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (8.65729pt too wide) in paragraph at lines 35--35
+\TU/lmr/bx/n/10 K$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (6.56729pt too wide) in paragraph at lines 36--36
+\TU/lmr/bx/n/10 L$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (10.56729pt too wide) in paragraph at lines 37--37
+\TU/lmr/bx/n/10 M$[]$$[]$$[]$ 
+ []
+
+
+Overfull \hbox (8.6473pt too wide) in paragraph at lines 38--38
+\TU/lmr/bx/n/10 N$[]$$[]$$[]$ 
+ []
+
+[1
+
+] (./plant_ids.aux) ) 
+Here is how much of TeX's memory you used:
+ 219 strings out of 492998
+ 2450 string characters out of 6139962
+ 67708 words of memory out of 5000000
+ 4278 multiletter control sequences out of 15000+600000
+ 3672 words of font info for 18 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 22i,4n,19p,175b,107s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on plant_ids.xdv (1 page, 14244 bytes).

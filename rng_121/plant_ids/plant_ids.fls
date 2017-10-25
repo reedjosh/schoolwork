@@ -1,0 +1,14 @@
+PWD /home/jreed/Documents/schoolwork/rng_121/plant_ids
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/xetex/xelatex.fmt
+INPUT plant_ids.tex
+OUTPUT plant_ids.log
+INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texmf-dist/tex/latex/base/size10.clo
+INPUT plant_ids.aux
+INPUT plant_ids.aux
+OUTPUT plant_ids.aux
+OUTPUT plant_ids.xdv
+INPUT plant_ids.aux

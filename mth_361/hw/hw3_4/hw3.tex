@@ -1,0 +1,295 @@
+% Joshua Reed
+% Fall, 2017
+% 
+% hw3.tex
+% 
+% Homework for introduction to probability.
+
+\documentclass[12pt]{article}
+\setlength\parindent{0pt}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{pgfplots}
+
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+% For Align:
+%'*' tells LaTeX not to number lines.
+%Align is a math environment. Thus \text{} is used for text contained within.
+%'&' indicates a seperation between columns.
+
+\begin{document}
+
+{%Header section
+  \large \bfseries 
+  Joshua Reed \\
+  Fall, 2017 \\
+  \begin{center}
+    {\huge Homework 2}\\
+    MTH 361 - Introduction to Probability \\% chktex 8 
+  Section 2.7: 7, 25, 33, 41, 53---Section 3.5: 7, 24, 29, 35, 37
+  \end{center}}
+ 
+ 
+\section{2.7 \#7} 
+\subsection{Exercise}A commercial for Glade Plug-ins says that by inserting 2 of a choice of 11 scents into the device, you can make more than 50 combinations. If we exclude 
+the boring choice of two of the same scent, how many possibilities are there?
+
+\subsection{Solution}
+\subsubsection{Ways to pick the first.}
+There are 11 ways to pick the first item. 
+
+\subsubsection{Ways to pick the second.}
+There are then 10 ways to pick the second item. 
+
+\subsubsection{Total ordered pickings}
+There $11*10$ ways to pick two different scents; however since the order of picking is not relavent, this duplicates the number of combinations by $2$. 
+
+Thus there are \textbf{$55$} ways to combine $2$ different scents from $11$.
+
+\section{2.7 \#25} 
+\subsection{Exercise}
+How many ways can 5 history books, 3 math books, and 4 novels be arranged on a shelf if the books of each type must be together.
+
+
+\subsection{Solution}
+\subsubsection{Frame the problem.}
+Because the books have to be together, this is how many ways can the books be arranged within their categories 
+times how many ways can the categories be arranged?
+
+\subsubsection{Category Arrangement}
+When viewing the problem as how to place three items, placing each item reduces the number of placement choices
+by one.
+
+In placing the first book, there are three choices, then two for the second, and only one remaining for the final
+item.
+
+As such, there are $3! $ or $3*2*1=6$ ways to arrange the items.
+
+\subsubsection{Individual Book Arrangements}
+This is the number of arrangements within each category times themselves.
+
+\begin{align*}
+  \text{Arrangements Within Categories}&=3!4!5! \\
+  &= 17,280
+\end{align*}
+
+\subsubsection{Total Arrangements}
+\begin{align*}
+  \text{Total Arrangements }&=17,280*6 \\
+  &=103,680
+\end{align*}
+
+\section{2.7 \#33} 
+\subsection{Exercise}
+David claims to be able to distinguish brand B beer from brand H, but Alice claims that he just guesses. 
+They set up a taste test with 10 small glasses of beer. David wins if he gets 8 or more right. WHat is the probability
+that he will win (a) if he's just guessing? (b) If he gets the right answer with probability 0.9?
+
+\subsection{Solution}
+\subsubsection{When David is Just Guessing}
+Assuming when David is just guessing, he guesses correct with $P($Correct Beer$)= 0.5$.
+
+In order to win he needs to get 8 or more correct. Thus, this is $P(X\geq8)$.
+
+The probability of $P(X=x)$ is simply the binomial distribution.
+
+This can be solved using $P(X\geq8) = P(X=8 ) +P(X=9)) + P(X=10)$
+
+\begin{align*}
+  P(X=k)=\binom{10}{k}p^kq^{n-k}
+\end{align*}
+\begin{align*}
+  P(X\geq8)&=\binom{10}{8}0.5^{10} + \binom{10}{9}0.5^{10} + \binom{10}{10}0.5^{10}\\
+  &=9.77*10^{-4}\left(\binom{10}{8} + \binom{10}{9} + \binom{10}{10}\right)\\
+  &=0.054688
+\end{align*}
+
+\subsubsection{When David Has $P($Correct Beer$)= 0.9$.}
+This is the same problem, but with a much greater probability of success. 
+
+Again\ldots 
+\begin{align*}
+  P(X=k)=\binom{10}{k}p^kq^{n-k}
+\end{align*}
+and here, $q = 1-p$.
+
+At this point I simply used python to compute 
+\begin{align*}
+  P(X\geq8)&=1-F_x(7)\\
+  &=0.929809
+\end{align*}
+
+
+\section{2.7 \#41} 
+\subsection{Exercise}
+In one of the New York state lottery games, a number is chosen at random between 0 and 999. Suppose you play this
+game 250 times. Use the Poisson approximation to estimate the probabiltiy that you will never win and
+compare with the exact answer.
+
+\subsection{Solution}
+\subsubsection{Exact}\label{ssub:approximation}
+The exact solution is the binomial with $P(X=0)$.
+\begin{align*}
+  P(X=k)&=\binom{250}{0}\frac{1}{1000}^0\frac{999}{1000}^{250}\\
+        &=0.77870338
+\end{align*}
+
+
+
+\subsubsection{Approximation}\label{ssub:approximation}
+Poisson Approximation:
+$\lambda = pn=\frac{250}{1000}=0.25$
+
+\begin{align*}
+  P(X=0)&=\frac{(\lambda t)^0}{0!}e^{\lambda t}\\
+         &=\frac{1}{1}e^{0.25 t}\\
+        &=0.0.7788008
+\end{align*}
+
+In comparison the two answers are very close. It seems the larger the n, the closer the two outcomes become.
+
+
+\section{2.7 \#53} 
+\subsection{Exercise}
+Four people are chosen at random from 5 couples. What is the probability that two men and two women are selected?
+
+\subsection{Solution}
+\subsubsection{Frame the Problem}\label{ssub:frame_the_problem}
+This is the number of ways to choose 2 men from five, then 2 women from 5 divided by the total
+number of ways to choose 4 people from 10.
+
+\begin{align*}
+  P(\text{2 and 2})&=\frac{\binom{5}{2}^2}{\binom{10}{4}}\\
+  &=\frac{100}{210} =\frac{10}{21}
+\end{align*}
+
+\section{3.5 \#7} 
+\subsection{Exercise}
+Suppose 60\% of the people subscribe to newspaper A, 40\% to newspaper B, and 30\% to both. If a person is picked at
+random, what is the probability that she subscribes to newspaper A?
+
+\subsection{Solution}
+The solution is in wording the problem as `What is the probability of A given A union B?'
+
+\begin{align*}
+  P(A|(A\cup B)&= \frac{P(A\cap (A\cup B))}{P(A\cup B)}\\
+\end{align*}
+
+Using the mutual exclusion principle\ldots
+\begin{align*}
+  P(A\cup B) &=P(A) + P(B) - P(A\cap B)\\
+             &=0.6 + 0.4 - 0.3\\
+             &=0.7
+\end{align*}
+
+And noting that \ldots
+\begin{align*}
+  P(A\cap(A\cup B))=P(A)
+\end{align*}
+
+Finally
+\begin{align*}
+  P(A|(A\cup B)&= \frac{P(A)}{P(A\cup B)}\\
+               &= \frac{0.6}{0.7}
+\end{align*}
+
+\section{3.5 \#24} 
+\subsection{Exercise}
+John takes the bus with probability 0.3 and the subway with probabilty 0.7. 
+He is late 40\% of the time he takes the bus, but only 20\% of the time when he takes the subway. What is the
+probability that he is late for work?
+
+\subsection{Solution}
+This is just a sort of weighted probability sum. 
+
+\begin{align*}
+  P(\text{late})&= P(\text{Sub})P(\text{Late}|\text{SUB}) + P(\text{Bus})P(\text{Late}|\text{Bus})\\
+                &= 0.3*0.4 + 0.7*0.2\\
+                &= 0.12 + 0.14\\
+                &= 0.26
+\end{align*}
+
+A point of note here is that $P($Sub$)$ and $P($Bus) are probably better thought of as $P(S)$ and $P(\neg S)$.
+
+Then the total probability of being late L becomes\ldots
+\begin{align*}
+  P(L)=P(\neg S)P(L|\neg S) + P(S)P(L|S)
+\end{align*}
+
+
+\section{3.5 \#29}
+\subsection{Exercise}
+A student is taking a multiple-choice test in which each question has four possible answers. She knows the answers to 50\% of the questions, can narrow the choices down to two 30\% of the time, and does not know anything about 20\% of the questions. What is the probability that she will correctly answer a question chosen at random from the test?
+
+\subsection{Solution}
+\begin{align*}
+  P(C) &= P(C|X)P(X) + P(C|Y)P(Y) + P(C|Z)P(Z)\\
+       &= 1.0(0.50) + 0.50(0.30) + 0.25(0.20)\\
+       &= 0.50 + 0.15 + 0.05\\
+       &= 0.70
+\end{align*}
+
+\section{3.5 \#35}
+\subsection{Exercise}
+The alpha fetal protein test is meant to detect spina bifida in unborn babies, a condition that affects 1 out of 1,000 children who are born. The literature on the test indicates that 5\% of the time a healty baby will cause a positive reaction.
+We will assume that the test is positive 100\% of the time when spina bifida is present. Your doctor has just told
+you that your alpha fetal protein test was positive. What's the chance that your baby actually has
+spina bifida?
+
+\subsection{Solution}
+\begin{align*}
+  P(\text{Pos}|\text{TestPos})&=\frac{P(\text{TestPos}|\text{Pos})P(\text{Pos})}{P(\text{TestPos})}\\
+                              &=\frac{(1)P(\text{Pos})}{P(\text{Pos})+P(\text{TestPos}|\text{Neg})}\\
+                              &=\frac{0.001}{0.001+0.05}\\
+                              &=0.0197
+\end{align*}
+So, less than 2\% chance that your baby actually has spina bifida.
+
+\section{3.5 \#37}
+\subsection{Exercise}
+To improve the reliability of the channel described in the last example, we repeat each digit in the message three times.
+What is the probability that 111 was sent given that (a) we recieved 101, (b) We received 000?
+
+As per the previous problem, p=0.9, q=0.1. Ones are as likely as zeroes.
+
+\subsection{Solution}
+\subsubsection{Received a 101}\label{ssub:received_a_101}
+
+\begin{align*}
+  P(111|101) = \frac{P(101|111)P(111)}{P(101)}
+\end{align*}
+
+Because the sent digits have to be either 111 or 000, the P(111)=0.5, and P(000)=0.5.
+
+From here, the probability that 111 was sent given 101 was received is\ldots
+
+\begin{align*}
+  P(111|101) &= \frac{P(101|111)}{P(101|000) + P(101|111)}\\
+             &= \frac{(0.1^1*0.9^2)}{0.1^3 + (0.1^1*0.9^2)}\\
+             &= \frac{0.081}{0.001 + 0.081}\\
+             &= 0.987805
+\end{align*}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

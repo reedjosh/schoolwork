@@ -12,6 +12,7 @@
 % Chktext is annoying! Refer to documentation for warnings ignored here...
 % chktex-file 25 chktex-file 40 chktex-file 3 chktex-file 15
 \documentclass[10pt,landscape,a4paper]{article}
+\usepackage{titlesec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{multicol}
@@ -23,57 +24,23 @@
 
 \definecolor{myblue}{cmyk}{1,.72,0,.38}
 
-%\def\firstcircle{(0,0) circle (1.5cm)}
-%\def\secondcircle{(0:2cm) circle (1.5cm)}
 
-%\colorlet{circle edge}{myblue}
-%\colorlet{circle area}{myblue!5}
-
-%\tikzset{filled/.style={fill=circle area, draw=circle edge, thick}, 
-%    outline/.style={draw=circle edge, thick}}
-
-\pgfdeclarelayer{background}
-\pgfsetlayers{background,main}
-
-%% use to change color of math font
-%\everymath\expandafter{\the\everymath \color{myblue}}
-%\everydisplay\expandafter{\the\everydisplay \color{myblue}}
 
 \renewcommand{\baselinestretch}{.8}
 \pagestyle{empty}
 
-\global\mdfdefinestyle{header}{%
-linecolor=gray,linewidth=1pt,%
-leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
-}
 
-\newcommand{\header}{%
-\begin{mdframed}[style=header]
-\small
-Probability and Stochastic Process\\
-by~Joshua~Reed,~page~\thepage~of~2
-\end{mdframed}
-}
+% Decrease section spacings.
+\titlespacing*{\section}{0pt}{0cm}{0cm}
+\titlespacing*{\subsection}{0pt}{0cm}{0cm}
+\titlespacing*{\subsubsection}{0pt}{0cm}{0cm}
 
 
+% Change section stylings.
+\newcommand{\mysection}[1]{\section*{\color{myblue}\bfseries #1}}
+\newcommand{\myssubsection}[1]{\section*{\color{myblue}\normalsize\bfseries #1}}
+\newcommand{\mysssection}[1]{\section*{\color{myblue}\small\bfseries #1}}
 
-\makeatletter
-\renewcommand{\section}{\vspace{1mm}\hrule\@startsection{section}{1}{0mm}%
-                                {1mm}%
-                                {1mm}%x
-                        {\large\bfseries}}
-\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
-                                {.2ex}%
-                                {.2ex}%x
-                                {\normalsize\bfseries}}
-\renewcommand{\subsubsection}{\@startsection{subsection}{1}{0mm}%
-                                {.2ex}%
-                                {.2ex}%x
-                                {\color{myblue}\small\bfseries}}
-
-
-
-\makeatother
 \setlength{\parindent}{0pt}
 
 \begin{document}

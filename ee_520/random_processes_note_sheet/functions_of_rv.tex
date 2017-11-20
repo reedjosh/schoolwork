@@ -1,81 +1,81 @@
-\section*{Functions of Random Variables}
+\mysection{Functions of Random Variables}
 
-\subsection*{A Single Random Variable}
+\myssection{A Single Random Variable}
 If $Y=g(X)$, where $X$ is a random variable, then \\
 $f_y(v)=P\{Y\leq v\}=P\{g(X)\leq v\}$ \\
 If $g(u)$ is monotonic, then \\
 $f_y(v)=[\frac{f_x(u)}{g'(u)}]_{u=g^{-1}(v)}$
 
-\subsection*{Two Random Variables}
+\myssection{Two Random Variables}
 
-\subsubsection*{Joint distribution function of $X$ and $Y$}
+\mysssection{Joint distribution function of $X$ and $Y$}
 $F_{XY}(u,v)=P\{X\leq u, Y\leq v\}$
 
-\subsubsection*{Properties}
+\mysssection{Properties}
 $P\{(a<X\leq b) \; and \; (c<Y\leq d)\}=F_{XY}(b,d)-F_{XY}(a,d)-F_{XY}(b,c)+F_{XY}(a,c)\geq 0$ \\
 $F_{XY}(-\infty,v)=0, F_{XY}=(u,-\infty)=0$ \\
 $F_{XY}(\infty, \infty)=1$
 
-\subsubsection*{Marginal Distributions}
+\mysssection{Marginal Distributions}
 $F_{XY}(u, \infty)=F_X(u)$ \\
 $F_{XY}(\infty, v)=F_y(v)$ \\
 
-\subsubsection*{Joint Probability Mass Function}
+\mysssection{Joint Probability Mass Function}
 $p_{XY}(a_i, b_j)=P\{X=a_i, Y=b_j\}$, where $X$ and $Y$ take values $\{a_i\}$ and $\{b_i\}$
 
-\subsubsection*{Joint Probability Density Function}
+\mysssection{Joint Probability Density Function}
 $f_{XY}(u,v)=\frac{\delta^2F_{XY}(u,v)}{\delta u \delta v}$
 
-\subsubsection*{Properties}
+\mysssection{Properties}
 $f_{XY}(u,v) \geq 0$ \\
 $\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f_{XY}(u,v)du\: dv = 1$ \\
 $P\{(a<X\leq b \; and \;(c<Y\leq d)\} = \int_{c}^{d}\int_{a}^{b}f_{XY}(u,v)du\: dv = 1$ \\
 $F_{XY}(b,d)=\int_{-\infty}^{d}\int_{-\infty}^{b}f_{XY}(u,v)du\: dv$
 
-\subsubsection*{Marginal Densities}
+\mysssection{Marginal Densities}
 $f_X(u)=\int_{-\infty}^{\infty}f_{XY}(u,v)dv$, and $f_Y(v)=\int_{-\infty}^{\infty}f_{XY}(u,v)du$
 
-\subsubsection*{Independent Random Variables}
+\mysssection{Independent Random Variables}
 $f_{XY}(u,v) = f_X(u)f_Y(u)$ \\
 $F_{XY}(u,v)=F_X(u)F_Y(v)$
 
-\subsubsection*{Conditional Densities}
+\mysssection{Conditional Densities}
 $f_{X|A}(u)=\frac{d}{du}P\{X\leq u|A\}=\frac{d}{du}P\{(X\leq u) \cap A\}/P\{A\} $
 
-\subsubsection*{Two Cases}
+\mysssection{Two Cases}
 $A={a<X\leq b}:f_{X|A}(u|A)=f_x(u)/P\{A\}$, \\ for $a<u\leq b$, and $0$ elsewhere \\
 $A=\{Y=v\}:f_{X|Y}(u|v)=f_{XY}(u,v)/f_y(v)$ \\
 The second way can be represented in two ways \\
 $f_{XY}(u,v)=f_{X|Y}(v|u)f_y(v)=f_{Y|X}(u|v)f_X(u)$
 
-\subsubsection*{Total Probability and Bayes' for Random Vars}
+\mysssection{Total Probability and Bayes' for Random Vars}
 $f_x(u)=\int_{-\infty}^{\infty}f_{X|Y}(u|v)f_Y(v)dv$ \\
 $f_{Y|X}(v|u)=f_{X|Y}(u|v)f_Y(v)/f_X(v)$ \\
 In the discrete case the integrals can be replaced by sums, and the densities can be replaced by probabilities
 
-\subsubsection*{Jointly Gaussian Rondom Variable} 
+\mysssection{Jointly Gaussian Rondom Variable} 
 Placeholder
 
-\subsubsection*{Conditional Densities}
+\mysssection{Conditional Densities}
 Placeholder
 
-\subsection*{Functions of Two Random Variables}
+\myssection{Functions of Two Random Variables}
 
-\subsubsection*{Expectations}
+\mysssection{Expectations}
 $E\{g(X,Y)\}=$ \\
 Discrete Case \\
 $\sum_j\sum_ig(a_i,b_j)P\{X=a_i,Y=b_j\}$ \\
 Continuous Case \\
 $\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}g(u,v)f_{XY}(u,v)du \; dv$
 
-\subsubsection*{Properties}
+\mysssection{Properties}
 1. $E\{C\}=C$ \\
 2. $E\{ag(X,Y)\}=aE\{g(X,Y)\}$ \\
 3. $E\{g(X,Y) + h(X,Y)\}=E\{g(X,Y)\} + E\{h(X,Y)\}$ \\
 4. If $g(X,Y) \geq 0$, then $ E\{g(X,Y)\}\geq 0$ \\
 5. IF $X$ and $Y$ are independent, then $E\{g(X)h(Y)\}=E\{g(X)\}E\{h(Y)\}$
 
-\subsubsection*{Correlation and Covariance}
+\mysssection{Correlation and Covariance}
 Correlation between $X$ and $Y$: $R_{XY}=E\{X,Y\}$ \\
 Covariance of $X$ and $Y$: $Cov(X,Y)=C_{XY}=E\{(X-m_x)(Y-m_y)\}=R_{XY}-m_xm_y$ \\
 Correlations Coefficient: \\
@@ -84,30 +84,30 @@ If $\rho_{XY}=\pm 1$, \\ then $X$ and $Y$ are perfectly correlated \\
 If $\rho_{XY}=\pm 0$, \\ then $X$ and $Y$ are uncorrelated \\
 
 
-\subsubsection*{Linear Approximation}
+\mysssection{Linear Approximation}
 Extimating $X$ from the values of $Y$: $\hat{X}=m_x+(\rho_{XY}\sigma_x/\sigma_y)(Y-m_y)$
 Mean-Squared Error: $E\{[\hat{X}-X]^2\}=\sigma_x^2(1-\rho_{XY}^2)$ \\
 Gaussian random variables: \\
 If $X$ and $Y$ are Gaussian and uncorrelated, \\then they are independent \\
 The linear transformation of Gaussian random variables is also Gaussian 
 
-\subsubsection*{Functions of Two RVs}
+\mysssection{Functions of Two RVs}
 $Z=g(X,Y)$ \\
 $F_Z(w)=P\{g(X,Y) \leq w \}$
 
-\subsubsection*{Sums of Two RVs}
+\mysssection{Sums of Two RVs}
 $Z=X+Y$, then $f_Z(w)=\int_{-\infty}^{\infty}f_{XY}(u, w-u)du$ \\
 If $X$ and $Y$ are independent: \\
 $f_Z(w)=\int_{-\infty}^{\infty}f_Y(w-u)f_x(u)du$
 
 
-\subsubsection*{Mean and Variance of a Sum}
+\mysssection{Mean and Variance of a Sum}
 $E\{Z\}=E\{X\}+E\{Y\}$ \\
 $Var(Z)=Var(X)+Var(Y)+2Cov(X,Y)$ \\
 For uncorrelated variables, variance of a sum is the sum of the variance.
 
 
-\subsubsection*{Subjects not yet added}
+\mysssection{Subjects not yet added}
 Rayleigh Density \\
 Estimation \\
 Maximum a-posteriori probability (MAP) estimate of $X$ given $Y$ \\

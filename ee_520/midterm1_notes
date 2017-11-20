@@ -1,0 +1,4 @@
+Inverse Transform
+E[E[Z|X,Y]|X] = E[Z|X]
+If you are trying to predict some RV Z from two other RVs X, Y, what does Z, X being independent indicate. -> Only that knowing X doesn't inform Z.
+

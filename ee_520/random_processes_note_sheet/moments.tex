@@ -1,0 +1,58 @@
+\section*{Moments}
+\subsection*{First}
+
+\subsubsection*{General}
+The first moment is the mean of the distribution. Sometimes refered to as the center of mass.
+
+\subsubsection*{Formula}
+Where $p(x)$ is the probabilty of the outcome $x$ occuring.
+$\mu_x=E\{X\}=\int p(x)xdx$\\
+And applies via a sum for the discrete case.
+
+\subsection*{N\textsuperscript{th} Moment}
+$E\{X^n\}=\int p(x)x^ndx$\\
+
+
+\subsubsection*{Properties}
+If $Y=aX+b$, \\ 
+then $m_y=am_x+b$ \\
+and 
+$\sigma_y^2=a^2\sigma_x^2$
+
+\subsection*{Expectation}
+\subsubsection*{General}
+The expectation $E$ of a function $g$ of a random variable $x$, $E\{g(X)\}$: \\
+$E\{g(X)\}=\int_{-\infty}^{\infty}g(u)f_x(u)du$ \\
+A sum can be substituted for the integral in the discrete case unless using impulse functions
+
+\subsubsection*{Properties}
+$E\{C\}=C$ \\
+$E\{ag(X)+bh(X)\}=aE\{g(x)\}+bE\{h(X)\}$ \\
+If $g(X)\geq 0$, then $E\{g(X)\} \geq 0$
+
+\subsection*{Variance}
+$Var(X)=E\left[(X-\mu_x)^2\right]=E[X^2]-\mu_x^2$
+$Var(X)=\sigma^2=\int(X-\mu_x)^2f_x(x)dx$
+$Var(X)=\sigma^2=\sum_{i=1}^{n}p_i(x_i-\mu_x)^2$
+    
+\subsection*{Covariance}
+$Var(X)=Cov(X,X)$\\
+$Cov(X,Y)=\sigma_{XY}$
+$\sigma_{XY}=E[(X-\mu_x)(Y-\mu_y)]$
+$\sigma_{XY}=E[XY]-E[X]E[Y]$
+$cov(X, a) = 0$
+$cov(X,Y) = cov(Y,X)$
+$cov(X+a, Y+b)=abcov(X,y)$
+$cov(X+a,Y+b)=cov(X,Y)$
+
+\subsection*{Covariance for RV Vector}
+$\sigma_{\vec{X}\vec{Y}}=E[(\vec{X}-E[\vec{X}])(\vec{Y}-E[\vec{Y}])]$
+$\sigma_{\vec{X}\vec{Y}}=E[\vec{X}\vec{Y}^{\,T}]-E[\vec{X}]E[\vec{Y}]^T$
+
+\subsection*{Correlation}
+$corr(X,Y)=\rho_{XY}$\\
+$\rho_{XY}=\frac{\sigma_{XY}}{\sigma_X\sigma_Y}$
+
+
+
+

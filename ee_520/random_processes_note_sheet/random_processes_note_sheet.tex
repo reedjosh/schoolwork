@@ -1,16 +1,3 @@
-% The below comments are chktex directives. 
-% Chktex will ignore space after command warning.
-% chktex-file 1
-% Chktex will ignore odd count of parens.
-% chktex-file 17
-% Chktex will ignore length of dash.
-% chktex-file 8
-% Chktex will ignore intersentence spacing issues.
-% chktex-file 13
-% hktex will ignore elipses warnings.
-% chktex-file 11
-% Chktext is annoying! Refer to documentation for warnings ignored here...
-% chktex-file 25 chktex-file 40 chktex-file 3 chktex-file 15
 \documentclass[10pt,landscape,a4paper]{article}
 \usepackage{titlesec}
 \usepackage[utf8]{inputenc}
@@ -19,15 +6,15 @@
 \usepackage{wrapfig}
 \usepackage[top=1mm,bottom=2mm,left=1mm,right=1mm]{geometry}
 \usepackage[framemethod=tikz]{mdframed}
-\renewcommand\familydefault{\sfdefault}
-\raggedright
 
 \definecolor{myblue}{cmyk}{1,.72,0,.38}
+\renewcommand\familydefault{\sfdefault}
 
-
-
-\renewcommand{\baselinestretch}{.8}
 \pagestyle{empty}
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{.8}
 
 
 % Decrease section spacings.
@@ -38,19 +25,18 @@
 
 % Change section stylings.
 \newcommand{\mysection}[1]{\section*{\color{myblue}\bfseries #1}}
-\newcommand{\myssubsection}[1]{\section*{\color{myblue}\normalsize\bfseries #1}}
-\newcommand{\mysssection}[1]{\section*{\color{myblue}\small\bfseries #1}}
+\newcommand{\myssection}[1]{\subsection*{\color{myblue}\normalsize\bfseries #1}}
+\newcommand{\mysssection}[1]{\subsubsection*{\color{myblue}\small\bfseries #1}}
 
-\setlength{\parindent}{0pt}
 
 \begin{document}
 \small
 \begin{multicols*}{5}
-\input{probability}
-\input{distributions}
-\input{moments}
-%\input{functions_of_rv}
-\input{processes}
-\input{basic_maths}
+  \input{probability}
+  \input{distributions}
+  \input{moments}
+  %\input{functions_of_rv}
+  \input{processes}
+  \input{basic_maths}
 \end{multicols*}
 \end{document}

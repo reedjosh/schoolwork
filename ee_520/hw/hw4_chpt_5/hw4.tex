@@ -1,0 +1,245 @@
+% Joshua Reed
+% Fall, 2017
+% 
+% hw1.tex
+% 
+% Homework for random processes.
+
+% chktex-file 1 chktex-file 13 chktex-file 25 chktex-file 3 chktex-file 36
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{listings}
+\usepackage[compact]{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{commath}
+\graphicspath{{img/}}
+
+\setlength\parindent{00pt}
+\setlength{\parskip}{\baselineskip}
+\titlespacing{\section}{0pt}{5pt}{-\parskip}
+\titlespacing{\subsection}{0pt}{-5pt}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{-8pt}{-\parskip}
+
+\makeatletter
+\newcommand{\vx}{\vec{x}\@ifnextchar{^}{\,}{}}
+\newcommand{\vy}{\vec{y}\@ifnextchar{^}{\,}{}}
+\newcommand{\vX}{\vec{X}\@ifnextchar{^}{\,}{}}
+\newcommand{\vY}{\vec{Y}\@ifnextchar{^}{\,}{}}
+\makeatother
+
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+
+\begin{document}
+
+{%Header section
+  \large \bfseries 
+  Joshua Reed\\
+  Fall, 2017
+
+  \begin{center}
+    {\huge Homework 4}
+
+    EE 520 - Random Processes \\% chktex 8 
+  \normalsize Problems: 5.1, 5.4, 5.20, 5.29, and 5.30
+  \end{center}}
+ 
+ 
+\section{5.1} 
+\subsection{Exercise}
+Let $f_{\vx}(\vx)$ be given as.
+
+\begin{align*}
+  f_{\vx}(\vx)=Ke^{-\vx^T\vec{\Lambda}}u(\vx),
+\end{align*}
+
+where $\vec\Lambda=(\lambda_1,\ldots,\lambda_n)^T$ with $\lambda_i > 0$ for all $i$, $\vx=(x_i,\ldots,x_n)^T$, $u(\vx)=1$ if $x_i \geq 0$, $i=1,\ldots,n$, 
+and zero otherwise, and $K$ is a constant to be determined. What value of $K$ will enable $f_{\vx}(\vx)$ to be a pdf?
+
+For $f_{\vx}(\vx)$ to be a pdf it must equal 1 under indefinite integration. 
+
+\begin{align*}
+  1 & = \int_{-\infty}^{\infty} f_{\vx}(\vx) d\vx\\
+    & = \int_{-\infty}^{\infty} Ke^{-\vx^T\vec{\Lambda}}u(\vx) d\vx\\
+    & = K\int_{0}^{\infty} e^{-\vx^T\vec{\Lambda}} d\vx\\
+\end{align*}
+
+and here, $\vx^T\vec{\Lambda}$ is a scalar product of all $x_i\lambda_i$.
+
+\begin{align*}
+  \vx^T\vec{\Lambda} = \sum_1^n x_i\lambda_i
+\end{align*}
+
+\begin{align*}
+  1 & = K\int_{0}^{\infty} e^{-\vx^T\vec{\Lambda}} d\vx\\
+  & = K\int_{0}^{\infty} e^{-\sum_1^n x_i\lambda_i} d\vx\\
+  & = K\int_{0}^{\infty} \prod_1^ne^{-x_i\lambda_i} d\vx\\
+  & = K\prod_1^n \int_{0}^{\infty} e^{-x_i\lambda_i} dx_i\\
+  & = K\prod_1^n \Eval{\frac{-e^{-x_i\lambda_i}}{\lambda_i}}{0}{\infty}\\
+  & = K\prod_1^n \frac{1}{\lambda_i}\\
+\end{align*}
+
+and finally\ldots
+
+\begin{align*}
+  K = \prod_1^n \lambda_i\\
+\end{align*}
+
+\section{5.4} 
+\subsection{Exercise}
+
+Let $X_1,X_2,X_3$, be three standard Normal RV's. For $i=1,2,3$ let $ Y_i\in {X_1, X_2, X_3}$ such that $Y_1 < Y_2 < Y_3$ i.e.\ the ordered---by---signed 
+magnitude of the $X_i$. Compute the joint pdf $f_{Y_1Y_2Y_3}(y_1,y_2,y_3)$.
+
+\begin{align*}
+  f_{Y_1Y_2Y_3}(y_1,y_2,y_3,)=
+  \begin{cases}
+    n!\prod_1^nf_x(y_i), & \text{for } y_1<y_2<y_3\\
+    0,                   & \forall \ other\\
+  \end{cases}
+\\
+  =
+  \begin{cases}
+    6!\prod_1^3\frac{1}{\sqrt{2\pi}}e^{-\frac{y_i^2}{2}}, & \text{for } y_1<y_2<y_3\\
+    0,                   & \forall \ other\\
+  \end{cases}
+\end{align*}
+  
+
+\section{5.20} 
+\subsection{Exercise}
+Let $\vX_i, i=1,\ldots,n$, be $n$ mutually orthogonal random vectors. Show that 
+
+\begin{align*}
+  E\left[\norm{\sum_{i=1}^{n}\vX_i}^2\right] = \sum_{i=1}^{n}E\left[\norm{\vX_i}^2\right]
+\end{align*}
+
+I solved this problem without either of the two below hints, but I believe my solution to still be correct. I have attempted to justify my 
+solution below.
+
+\begin{itemize}
+  \item{(\emph{Hint}: Use the definition $\norm{\vX}^2\stackrel{\Delta}{=}\vX^T\vX$)}
+  \item{Note: $\vX_i\vX_j$ for $j\neq i$, is zero because they are orthoganol. Therefore: $\sum_i^n\sum_j^n \vx_i\vx_j = \sum_i^n \vx^2_i$}
+\end{itemize}
+
+
+From the embedded python script and accompanying output, it can be seen that the magnitude of a sum of orthogonal vectors is equal to the square root of the sum of the squared magnitudes of the individual vectors. $$\norm{\sum_i^n\vX}=\sqrt{\sum_i^n\norm{\vX_i}^2}$$
+
+Which will be used below.
+
+
+\begin{align*}
+  E\left[\norm{\sum_{i=1}^{n}\vX_i}^2\right] &= \sum_{i=1}^{n}E\left[\norm{\vX_i}^2\right]\\
+  E\left[\norm{\vX_1+\cdots+\vX_n}^2\right] &= \sum_{i=1}^{n}E\left[\norm{\vX_i}^2\right]\\
+  E\left[\sqrt{\norm{\vX_1}^2+\cdots+\norm{\vX_n}^2}^2\right] &= \sum_{i=1}^{n}E\left[\norm{\vX_i}^2\right]\\
+  E\left[\norm{\vX_1}^2+\cdots+\norm{\vX_n}^2\right] &= \sum_{i=1}^{n}E\left[\norm{\vX_i}^2\right]\\
+  E\left[\norm{\vX_1}^2\right]+\cdots+E\left[\norm{\vX_n}^2\right] &= \sum_{i=1}^{n}E\left[\norm{\vX_i}^2\right]\\
+  \sum_{i=1}^nE\left[\norm{\vX_i}^2\right] &\stackrel{\checkmark}{=} \sum_{i=1}^{n}E\left[\norm{\vX_i}^2\right]\\
+\end{align*}
+\newpage
+\begin{figure}[h!]
+\lstinputlisting[language=python]{python_scripts/orthogonal_vector_magnitudes.py}
+\end{figure}
+\begin{figure}[htb!]
+\lstinputlisting{python_scripts/orthogonal_output}
+\end{figure}
+\newpage
+
+\section{5.29}
+\subsection{Excercise}
+Let $\vX = (X_1, X_2, X_3)^T$ be a random vector with $\vec{\mu}\stackrel{\Delta}{=}E[\vX]$ given by $\vec{\mu}=(5,-5,6)^T$.
+
+And covariance given by 
+\[\vec{K}=
+\begin{bmatrix}
+     5 & 2 & -1 \\
+     5 & 5 &  0 \\
+    -1 & 0 &  4 \\
+\end{bmatrix}
+\]
+
+Calculate the mean and variance of
+
+\begin{align*}
+  Y=\vec{A}^{\,T}\vX+B
+\end{align*}
+
+Where 
+
+\begin{align*}
+  \vec{A}=(2,-1,2)^T \text{and } B=5
+\end{align*}
+
+\begin{align*}
+  E[Y]&=E[\vec{A}^{\,T}\vX + B] \\
+      &=E[\vec{A}^{\,T}]E[\vX] + E[B] \\
+      &=E\left[  
+       \begin{bmatrix}2 & -1 & 2\end{bmatrix}
+       \right]E\left[\begin{bmatrix}X_1\\ X_2\\ X_3\\\end{bmatrix}\right] + E[5] \\
+      &=\begin{bmatrix}2 & -1 & 2\end{bmatrix}
+       \begin{bmatrix}5\\ -5\\ 6\\\end{bmatrix} + 5 \\
+      &=2(5)+-1(-5)+2(6) +5\\
+      &=10+5+12 +5\\
+      &=32
+\end{align*}
+
+First...
+
+\begin{align*}
+  cov(\vX)&=E[(\vX-\vec{\mu_X})(\vX-\vec{\mu_X})^T]\\
+          &=E[(\vX-\vec{\mu_X})(\vX^T-\vec{\mu_X}^{\,T})]\\
+          &=E[\vX\vX^T-\vX\vec{\mu_X}^{\,T}-\vec{\mu_X}\vX^T-\vec{\mu_X}\vec{\mu_X}^{\,T}]\\
+          &=E[\vX\vX^T]-E[\vX\vec{\mu_X}^{\,T}]-E[\vec{\mu_X}\vX^T]-\vec{\mu_X}\vec{\mu_X}^{\,T}\\
+          &=E[\vX\vX^T]-\vec{\mu_X}\vec{\mu_X}^{\,T}-\vec{\mu_X}\vec{\mu_X}^{\,T}-\vec{\mu_X}\vec{\mu_X}^{\,T}\\
+          &=E[\vX\vX^T]-\vec{\mu_X}\vec{\mu_X}^{\,T}
+\end{align*}
+
+Now...
+\begin{align*}
+  \sigma^2_Y&=E[(Y-E[Y])^2]\\
+          &=E[(\vec{A}^{\,T}\vX+5-32)^2]\\
+          &=E[(\vec{A}^{\,T}\vX-27)^2]\\
+          &=E[(\vec{A}^{\,T}\vX)^2-2(27)\vec{A}^{\,T}\vX +27^2]\\
+          &=E[(\vec{A}^{\,T}\vX)^2]-2(27)E[\vec{A}^{\,T}\vX]+E[27^2]\\
+          &=E[(\vec{A}^{\,T}\vX)^2]-2(27)^2+27^2\\
+          &=E[(\vec{A}^{\,T}\vX)^2]-27^2\\
+          &=\vec{A}^{\,T}E[\vX\vX^T]\vec{A}-729\\
+          &=\vec{A}^{\,T}(cov(\vX)+\vec{\mu}\vec{\mu}^{\,T})\vec{A}-1429\\
+          &=754-729\\
+          &=25\\
+\end{align*}
+
+\section{5.30} 
+\subsection{Exercise}
+Two jointly normal variables $X_1$, and $X_2$ have joint pdf $f_{X_1X_2}$ given by:
+
+\begin{align*}
+  f_{X_1X_2}(X_1, X_2)=\frac{2}{\pi\sqrt{7}}^{-\frac{8}{7}(X_1^2+\frac{3}{2}X_1X_2+X_2^2)}
+\end{align*}
+
+With
+
+\begin{align*}
+  \begin{pmatrix}Y_1\\Y_2\end{pmatrix} &= \vec{A}\begin{pmatrix}X_1\\ X_2\end{pmatrix}
+\end{align*}
+
+
+Find a non-trivial transformation A such that $Y_1$ and $Y_2$ are independent.
+
+I'm still working on completely understanding this one. I may turn in a complete solution in the future, but I didn't want to just copy from the solutions.
+
+\end{document}
+
+
+
+
+
+

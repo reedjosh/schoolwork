@@ -7,6 +7,7 @@ try:
 except:
     # Some IDE, most likely
     pass
+
 import matplotlib.collections
 import matplotlib.pyplot as plt
 import numpy as np
@@ -182,7 +183,9 @@ def main():
     plt.ylabel('$P[S \leq k]$')
     rescale()
     plt.legend()
+    plt.show()
     plt.savefig('img/plot-discrete-binomapprox.png')
+    plt.show()
 
     ## Discrete PDF / CDF based on binomial p = 0.5
     #plt.figure()

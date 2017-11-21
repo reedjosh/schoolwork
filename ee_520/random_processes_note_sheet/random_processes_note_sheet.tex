@@ -14,6 +14,7 @@
 \raggedright
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+\setlength{\columnsep}{1mm}
 \renewcommand{\baselinestretch}{.8}
 
 
@@ -24,18 +25,18 @@
 
 
 % Change section stylings.
-\newcommand{\mysection}[1]{\section*{\color{myblue}\bfseries #1}}
-\newcommand{\myssection}[1]{\subsection*{\color{myblue}\normalsize\bfseries #1}}
-\newcommand{\mysssection}[1]{\subsubsection*{\color{myblue}\small\bfseries #1}}
+\newcommand{\mysection}[1]{\section*{\Large\color{myblue}\bfseries #1}}
+\newcommand{\myssection}[1]{\subsection*{\normalsize\color{myblue}\normalsize\bfseries #1}}
+\newcommand{\mysssection}[1]{\subsubsection*{\footnotesize\color{myblue}\bfseries #1}}
 
 
 \begin{document}
-\small
-\begin{multicols*}{5}
+\footnotesize
+\begin{multicols*}{4}
   \input{probability}
   \input{distributions}
   \input{moments}
-  %\input{functions_of_rv}
+  \input{functions_of_rv}
   \input{random_processes}
   \input{basic_maths}
 \end{multicols*}

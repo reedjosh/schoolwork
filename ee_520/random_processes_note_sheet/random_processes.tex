@@ -2,14 +2,14 @@
 
 \myssection{General}
 
-\mysssection{First- and Second-order distribution of a rp} 
+\mysssection{1st and 2nd order Distributions of a RP} 
 $F_{X(t)}(x;t)=P\{X(t) \leq x\}$ \\
 $F_{X(t)}(x_1,x_2;t_1,t_2)=$ \\ $P\{X(t_1)\leq x_1 \; and \; X(t_2) \leq x_2\}$
 
 \mysssection{Mean, autocorrelation, and autocovariance functions}
-$m_x(t)=E\{x(t)\}$ \\
-$R_X(t_1,t_2)=E\{X(t_1)X(t_2)\}$ \\
-$C_X(t_1,t_2)=E\{[X(t_1)-m_x(t_1)][X(t_2)-m_x(t_2)]\}=R_x(t_1,t_2)-m_x(t_1)m_x(t_2)$
+$m_x(t)=E[x(t)]$ \\
+$R_X(t_1,t_2)=E[X(t_1)X(t_2)]$ \\
+$C_X(t_1,t_2)=E[[X(t_1)-m_x(t_1)][X(t_2)-m_x(t_2)]]=R_x(t_1,t_2)-m_x(t_1)m_x(t_2)$
 
 \mysssection{Wide-sense stationary process}
 $m_x=E\{X(t)\} $\\
@@ -24,6 +24,11 @@ $R_{XY}(\tau)=E\{X(t)Y(t+\tau)\}$
 
 \myssection{Specific Processes}
 
-\myssection{Poisson Process}
-Independend Increments \\
-I.I.D.
+\mysssection{Poisson Process}
+Interpreted as a Counting Process \\
+For: $N(0)=0$; iid; Independend Increments. \\
+$P(N(t)=n)=\frac{{(\lambda t)}^n}{n!}e^{\lambda t}$\\
+$E[N(t)]=\lambda t$, $\forall \tau=\Delta t$\\
+Interarrival Time Approximately Exponential\\
+With Expected Interarrivel of $\frac{1}{\lambda}$
+

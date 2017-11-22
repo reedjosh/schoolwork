@@ -1,0 +1,126 @@
+% Joshua Reed
+% Fall, 2017
+% 
+% Homework for random processes.
+
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{listings}
+\usepackage[compact]{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{commath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{mathtools}
+\usetikzlibrary{shapes,arrows,positioning}
+\graphicspath{{img/}}
+
+\setlength{\parindent}{0pt}
+
+% Sections without numbering.
+\newcommand{\mysection}[1]{\section*{#1}}
+
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+      
+\begin{document}
+{\large \bfseries % Header section 
+  Joshua Reed\\
+  Fall, 2017
+  \begin{center}
+    {\huge  Homework 6 Chapter 9} \\
+    {EE 520} Random Processes \\
+    \normalsize Problems: 9.1, 9.5, \& 9.14.
+  \end{center}}
+ 
+ 
+\mysection{Exercise 9.1} 
+Let $X[n]$ be a real-valued stationary random sequence with mean $E[X[n]]=\mu_x$
+and autocorrelation function $E[X[n+m]X[n]]=R_{XX}[m]$. If $X[n]$ is the 
+input to a D/A converter, the continuous-time output can be idealized as the 
+analog random process $X_a(t)$ with 
+\[ X_a(t)\stackrel{\Delta }{=}X[n]\text{, for  }n\leq t<n+1,\ \forall n \]
+
+\begin{enumerate}[label= (\alph*)]
+  \item Find the mean $E[X_a(t)]=\mu_a(t)$ as a function of $\mu_x$.\\
+    Here, $n\leq t < n$ is equivalent to saying $\floor{t}=n$
+    \begin{align*}
+      E[X_a(t)]&=E[X[\floor{t}]]\\
+               &=\mu_x[\floor{t}]\\
+               &=\mu_x
+    \end{align*}
+  \item Find the correlation $E[X_a(t1)X_a(t_2)]=R_{X_a X_a}(t_1t_2)$ in terms of $R_{XX}[m]$ 
+    \begin{align*}
+      E[X_a(t1)X_a(t_2)]&=E[X_a(\floor{t1})X_a(\floor{t_2})]\\
+                        &=E[X[\floor{t1}]X[\floor{t_2}]]\\
+                        &=R_{XX}[X[\floor{t1}]X[\floor{t_2}]]\\
+                        &=R_{XX}[\floor{t1}\floor{t_2}]\\
+    \end{align*}
+    Here, $\floor{t_2}-\floor{t_1}\neq t_2-t_1$, so it cannot be assumed that $R_{XX}$ is stationary.
+\end{enumerate}
+
+\newpage
+
+
+
+\mysection{Exercise 8.22} 
+Let $N(t)$ be a Poisson random process defined on $0\leq t<\infty$ with $N(0)=0$ and mean arrival rate $\lambda > 0$.
+\begin{enumerate}[label= (\alph*)]
+  \item Find the joint probability $P[N(t_1)=n_1, N(t_2)=n_2]$ for $t_2> t_1$.
+
+    Because the poisson process can be broken down into a sum of independent increments, this is really, what is the probability
+    that $N(t_1)=n_1$, and that the difference between $N(t_1)$ and $N(t_2)$ is the difference between $n_2$ and $n_1$.
+
+    Thus for the poisson process pmf
+      \[ P(X=k)=\frac{{(\lambda t)}^k}{k!}e^{-\lambda t}\text{,\quad } n=0,1,2\ldots,\text{ and } t\geq 0 \]
+    
+    \begin{align*}
+      P(N(t_1)=n_1,\ N(t_2)=n_2)&=P(N(t_1)=n_1,\ N(t_2)-N(t_1)=n_2-n_1)\\
+                               &=P(N(t_1)=n_1) P(N(t_2)-N(t_1)=n_2-n_1)\text{,\quad by independence}\\
+                               &=\left[\frac{{(\lambda t_1)}^{n_1}}{n_1!}e^{-\lambda t_1}u(n_1)\right] 
+                                 \left[\frac{{(\lambda t_2 -t_1)}^{n_2 -n_1}}{n_2 - n_1!}e^{-\lambda (t_2 - t_1)}u(n_2-n_1)\right]\\
+                               &=\frac{{(\lambda t_1)}^{n_1}e^{-\lambda t_1}{(\lambda t_2 -t_1)}^{n_2 -n_1}e^{-\lambda (t_2 - t_1)}u(n_1)  u(n_2-n_1)}{n_1!(n_2-n_1)!}\\
+                               &=\frac{\lambda^{n2} {(t_1)}^{n_1}e^{-\lambda t_2}
+                                      {(t_2 -t_1)}^{n_2 -n_1}{u(n_2-n_1)}}{n_1!(n_2-n_1)!}\\
+    \end{align*}
+
+  \item Find an expression for the $Kth$ order joint PMF, $ P_N(n_1,\ldots,n_K;t_1,\ldots,t_K)$.
+ 
+    For $t_i=0$ and $n_0=0$
+    \begin{align*}
+      P_N(n_1,\ldots,n_k;t_1,\ldots,t_k)&=\lambda^{n_k}e^{-\lambda t_k}\Pi_{i=1}^k \frac{{((t_i-t_{i-1}))}^{n_i-n_{i-1}}}{(n_i-n_{i-1})!}u(n_i-n_{i-1}) \\
+    \end{align*}
+\end{enumerate}
+\newpage
+
+
+
+
+\mysection{Exercise 9.14} 
+Let $W(t)$ be a \emph{standard} Wiener process, defined over $[0, \infty)$. Find the joint density $f_W(a1, a2;t1, t2)$ for $0<t_1<t_2$ % chktex 9
+
+A standard Wiener process is normally distributed on independent increments with mean dependent upon the previous increment. 
+As such, for increment 1 $f_X(x)=N(0,\alpha t)$ then for increment 2 it is $f_X(x2)=N(x_1,\alpha (t2-t1))$
+
+Here, $\alpha$ is simply 1.
+
+\begin{align*}
+  f_W(a_1, a_2;t_1,t_2)&=f_W(a_1;t_1)f_W(a_2|a_1;t_1,t_2)\\
+                       &=f_{N(0,t_1)}(a_1)f_{N(a_1,t_2)}(a_2)\\
+                       &=\frac{e^{-\frac{a_1}{2t_1}}}{\sqrt{2\pi t_1}} 
+                         \frac{e^{-\frac{(a_2-a_1)}{2(t_2-t_1)}}}{\sqrt{2\pi (t_2-t_1)}} 
+\end{align*}
+
+
+
+
+\newpage
+\end{document}
+
+
+
+

@@ -3,7 +3,7 @@ import errno
 import matplotlib
 
 try:
-    matplotlib.use('Agg')
+    matplotlib.use('agg')
 except:
     # Some IDE, most likely
     pass
@@ -11,9 +11,12 @@ import matplotlib.collections
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from scipy.misc import factorial
 import scipy.misc
 import scipy.stats
+import scipy.integrate as integrate
 import seaborn as sns
+from math import exp as e
 
 def safe_make(path):
     try:
@@ -121,15 +124,9 @@ def rescale():
     plt.tight_layout()
 
 
-@click.command()
-def main():
-    """Note that all images will end up in the 'img' folder.
+def plot_23_CDF():
+    """Plots the CDF for problem 2.3.
     """
-    safe_make('img')
-    matplotlib.rcParams['savefig.dpi'] = 150
-    sns.set_style('whitegrid')
-
-
     def f(x):
         if x <= 1.0:
             return (x/2)**2
@@ -142,19 +139,21 @@ def main():
         else:
             return 1
     x=np.linspace(0,21,200)
-    
     f2 = np.vectorize(f)
     y = f2(x)
+    print(y)
     plt.figure()
     plt.plot(x, y)
     plt.xlabel('x')
     plt.ylabel('$F_x(x)$')
-    #plt.legend()
-    #rescale()
     plt.title("Wait Times (CDF)")
     plt.show() 
     plt.savefig('img/plot-wait-times-cdf.png')
 
+
+def plot_23_PDF():
+    """Plots the PDF for problem 2.3
+    """
     def f(x):
         if x <= 1.0:
             return (x/2)
@@ -181,33 +180,91 @@ def main():
     plt.savefig('img/plot-wait-times-pdf.png')
 
 
-    # My Binomial Plot for Class Project
+def plot_210_CDF():
+    """Plot the CDF for problem 2.10.
+    """
+    def f(x):
+        """ This is the function for the CDF of problem 2.10.
+        """
+        A = 1.429
+        if x<1:
+            return 0.0
+        elif x<2:
+            return integrate.quad(lambda x: A*e(-x), 1, x)[0]
+        elif x<3:                             
+            return integrate.quad(lambda x: A*e(-x), 1, x)[0]+1/4
+        elif x<4:                             
+            return integrate.quad(lambda x: A*e(-x), 1, x)[0]+1/2
+        else:
+            return 1.0
+
+    x1=np.linspace(0,0.999,200)
+    x2=np.linspace(1,1.999,200)
+    x3=np.linspace(2,2.999,200)
+    x4=np.linspace(3,3.999,200)
+    x5=np.linspace(4,4.999,200)
+     
+    y1 = np.vectorize(f)(x1)
+    plt.legend()
+    y2 = np.vectorize(f)(x2)
+    y3 = np.vectorize(f)(x3)
+    y4 = np.vectorize(f)(x4)
+    y5 = np.vectorize(f)(x5)
+
+
     plt.figure()
-    n = 10
-    k = np.arange(n+1)
-    p = 0.33
-    q = 0.66
-    y_actual_noint = scipy.misc.comb(n, k) * p ** k * (1 - p) ** (n - k)
-    y_actual = np.cumsum(y_actual_noint)
-    plot_cdf_discrete(k, y_actual, label=r"$n = {}$ Binomial Law".format(n))
-    print(k)
-    print(y_actual)
-
-    n = 15
-    k = np.arange(n+1)
-    p = 0.33
-    q = 0.66
-    y_actual_noint = scipy.misc.comb(n, k) * p ** k * (1 - p) ** (n - k)
-    y_actual = np.cumsum(y_actual_noint)
-    plot_cdf_discrete(k, y_actual, label=r"$n = {}$ Binomial Law".format(n))
-    print(k)
-
-
-    plt.xlabel('k')
-    plt.ylabel('$P[S \leq k]$')
+    plt.plot(x1, y1)
+    plt.plot(x2, y2)
+    plt.plot(x3, y3)
+    plt.plot(x4, y4)
+    plt.plot(x5, y5)
+    plt.xlabel('x')
+    plt.ylabel('$F_x(x)$')
+    #rescale()
+    #plt.ylabel('$P[S \leq k]$')
+    plt.title("2.10 (CDF)")
+    plt.savefig('img/plot_CDF_210.png')
     rescale()
     plt.legend()
-    plt.savefig('img/plot-discrete-binomapprox.png')
+
+def calculations_210():
+    """CDF probability calculations for problem 210
+    """
+    def F_x_210(x):
+        """ This is the function for the CDF of problem 2.10.
+        """
+        A = 1.429
+        if x<1:
+            return 0.0
+        elif x<2:
+            return integrate.quad(lambda x: A*e(-x), 1, x)[0]
+        elif x<3:                             
+            return integrate.quad(lambda x: A*e(-x), 1, x)[0]+1/4
+        elif x<4:                             
+            return integrate.quad(lambda x: A*e(-x), 1, x)[0]+1/2
+        else:
+            return 1.0
+    print("F(3)-F(2)=  ", F_x_210(3)-F_x_210(2))
+    print("F(3)=  ", F_x_210(3))
+
+def calculations_219():
+    def f(k):
+        return integrate.quad(lambda x:1/5* (x**k)/(factorial(k))*e(-x), 0, 5)[0]
+    print(f(0))
+    print(f(1))
+    print(f(2))
+    
+
+@click.command()
+def main():
+    """Note that all images will end up in the 'img' folder.
+    """
+    safe_make('img')
+    matplotlib.rcParams['savefig.dpi'] = 150
+    sns.set_style('whitegrid')
+
+    #calculations_210()
+    calculations_219()
 
 
 

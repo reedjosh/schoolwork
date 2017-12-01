@@ -1,0 +1,258 @@
+README FILE FOR THE U.S. HISTORICAL CLIMATOLOGY NETWORK (U.S. HCN) MONTHLY DATA
+Version 2.5
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+I. CONTENTS OF http://cdiac.ess-dive.lbl.gov/ftp/ushcn_v2.5_monthly
+
+
+ushcn2014_FLs_52i_tmax.gz:   GZIP-compressed file of bias-adjusted mean monthly 
+                             maximum temperatures (with estimates for missing
+			     values)
+ushcn2014_FLs_52i_tmin.gz:   GZIP-compressed file of bias-adjusted mean monthly 
+                             minimum temperatures (with estimates for missing
+			     values)
+ushcn2014_FLs_52i_tavg.gz:   GZIP-compressed file of the average of bias- 
+                             adjusted mean monthly maximum and minimum 
+			     temperatures (with estimates for missing values)
+			     
+ushcn2014_FLs_52i_prcp.gz:   GZIP-compressed file of total monthly precipitation 
+                             (UNADJUSTED, but with estimates for missing 
+			     values)
+
+ushcn2014_FLs_tob_tmax.gz:   GZIP-compressed file of mean monthly maximum 
+                             temperatures adjusted only for the time of 
+			     observation bias
+ushcn2014_FLs_tob_tmin.gz:   GZIP-compressed file of mean monthly minimum 
+                             temperatures adjusted only for the time of 
+			     observation bias
+ushcn2014_FLs_tob_tavg.gz:   GZIP-compressed file of the average of mean 
+                             monthly maximum and minimum temperatures adjusted
+			     only for the time of observation bias
+
+ushcn2014_raw_tmax.gz:       GZIP-compressed file of unadjusted mean monthly 
+                             maximum temperatures 
+ushcn2014_raw_tmin.gz:       GZIP-compressed file of unadjusted mean monthly 
+                             minimum temperatures
+ushcn2014_raw_tavg.gz:       GZIP-compressed file of the average of un- 
+                             adjusted mean monthly maximum and minimum 
+			     temperatures 
+ushcn2014_raw_prcp.gz:       GZIP-compressed file of unadjusted total monthly 
+                             precipitation 
+
+ushcn-stations.txt:          List of U.S. HCN stations and their coordinates
+
+readme.txt:                  This file
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+II. FORMAT OF THE DATA FILES 
+
+Each data file contains data for all USHCN stations for one of the four 
+meteorological variables Tmax, Tmin, Tavg, or precipitation. Temperature
+values are given in tenths of degrees Fahrenheit (e.g., 725 indicates 72.5F)
+and precipitation amounts are given in hundredths of inches (e.g., 468
+indicates 4.68").
+
+Each record (line) in the files contains one year of 12 monthly values plus an 
+annual value.  
+
+The values on each line include the following:
+
+------------------------------
+Variable   Columns   Type
+------------------------------
+STAID         1-11   Character
+YEAR         13-16   Integer
+VALUE1       18-22   Integer
+DMFLAG1      23      Character
+QCFLAG1      24      Character
+DSFLAG1      25      Character
+VALUE2       27-31   Integer
+DMFLAG2      32      Character
+QCFLAG2      33      Character
+DSFLAG2      34      Character
+  .           .          .
+  .           .          .
+  .           .          .
+VALUE13     126-130   Integer
+DMFLAG13    131      Character
+QCFLAG13    132      Character
+DSFLAG13    133      Character
+------------------------------
+
+These variables have the following definitions:
+
+STAID      is the station identification code, containing country code ('US' for all
+           USHCN stations, network code ('H' for Historical Climatology Network),
+           columns 4-11='00'+6-digit Cooperative Observer ID number
+           See "ushcn-stations.txt" for a complete list of stations
+           and their metadata.
+	   
+YEAR       is the 4-digit year of the record.
+
+VALUE1     is the value for January in the year of record; in tenths of
+           degrees Fahrenheit for temperature (e.g., 725 indicates 72.5F) and hundredths
+           of inches for precipitation (e.g., 468 indicates 4.68"). Missing data values
+           are filled with "-9999".
+
+DMFLAG1    is the data measurement flag for January in the year of record:
+
+           Blank = no measurement information is applicable;
+	   
+           A - H = applying only to the relatively small number of values assigned using
+           v1.0 of the USHCN database, indicates the number of days missing (1 to 8) in
+           calculation of monthly mean temperature;
+
+           a - i = applying to version 2.5 USHCN data values (the vast majority), the
+           number of days missing (1 to 9) in calculation of monthly mean temperature;
+
+           E = if QCFLAG and DSFLAG are both blank, 'E' indicates the data value is an
+           estimate from surrounding values; no original value is available;
+
+           I = applying only to the relatively small number of values assigned using v1.0
+           of the USHCN database, indicates that the data value is interpolated using
+           surrounding stations' values;
+
+           . = applying only to the relatively small number of values assigned using v1.0
+           of the USHCN database, indicates that the data value has been estimated;
+
+QCFLAG1    is the quality flag for January in the year of record:
+
+           Blank = no failure of quality control check or could not be
+                   evaluated;
+
+           d = Pairwise Homogenization Algorithm (PHA) has strong evidence that
+               multiple inhomogeneities exist, but are too close to adjust;
+
+           g = PHA cannot adjust station series previous to a given 
+               inhomogeneity because there are too few neighbors
+               to estimate the adjustment (uncommon);
+
+DSFLAG1    is the data source flag for January in the year of record:
+
+           Blank = value was computed from daily available in GHCN-Daily;
+
+           Not Blank = daily data are not available so the monthly value was
+                       obtained from the USHCN version 1 dataset. The possible
+                       values are as follows:
+
+           1 = NCDC Tape Deck 3220, Summary of the Month Element Digital File;
+
+           2 = Means Book - Smithsonian Institute, C.A. Schott (1876,
+               1881-1931);
+
+           3 = Manuscript - Original Records, National Climatic Data Center;
+
+           4 = Climatological Data (CD), monthly NCDC publication; 
+
+           5 = Climate Record Book, as described in
+               History of Climatological Record
+	       Books, U.S. Department of Commerce, Weather
+               Bureau, USGPO (1960);
+
+           6 = Bulletin W - Summary of the Climatological
+               Data for the United States (by
+               section), F.H. Bigelow, U.S. Weather Bureau
+               (1912); and, Bulletin W -
+               Summary of the Climatological Data for the
+               United States, 2nd Ed.;
+
+           7 = Local Climatological Data (LCD), monthly
+               NCDC publication;
+
+           8 = State Climatologists, various sources;
+
+           B = Professor Raymond Bradley - Refer to
+               Climatic Fluctuations of the Western
+               United States During the Period of
+               Instrumental Records, Bradley, et. al.,
+               Contribution No. 42, Dept. of Geography and
+               Geology, University of Massachusetts (1982);
+
+           D = Dr. Henry Diaz, a compilation of data from
+               Bulletin W, LCD, and NCDC Tape Deck 3220 (1983);
+
+           G =  Professor John Griffiths - primarily from
+                Climatological Data.
+
+VALUE2     is the value for February in the year of record;
+
+DMFLAG2    is the data measurement flag for February in the year of record;
+
+QCFLAG2    is the data quality flag for February in the year of record;
+
+DSFLAG2    is the data source flag for February in the year of record;
+  .
+  .
+  .
+VALUE12    is the value for December in the year of record;
+
+DMFLAG12    is the data measurement flag for December in the year of record;
+
+QCFLAG12    is the data quality flag for December in the year of record;
+
+DSFLAG12    is the data source flag for December in the year of record.
+
+VALUE13     is the annual value (mean for temperature; total for precipitation);
+
+DMFLAG13    is the data measurement flag for the annual value;
+
+QCFLAG13    is the data quality flag for the annual value;
+
+DSFLAG13    is the data source flag for the annual value.
+ 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+III. FORMAT OF "ushcn-stations.txt"
+
+------------------------------
+Variable   Columns   Type
+------------------------------
+COOP ID       1-6    Character
+LATITUDE     8-15    Real
+LONGITUDE   17-25    Real
+ELEVATION   27-32    Real
+STATE       34-35    Character
+NAME        37-66    Character
+COMPONENT 1 68-73    Character
+COMPONENT 2 75-80    Character
+COMPONENT 3 82-87    Character
+UTC OFFSET  89-90    Integer
+------------------------------
+
+These variables have the following definitions:
+
+COOP ID     is the U.S. Cooperative Observer Network station identification 
+            code.  Note that the first two digits in the Coop Id correspond
+            to the state. 
+
+LATITUDE    is latitude of the station (in decimal degrees).
+
+LONGITUDE   is the longitude of the station (in decimal degrees).
+
+ELEVATION   is the elevation of the station (in meters, missing = -999.9).
+
+STATE       is the U.S. postal code for the state.
+
+NAME        is the name of the station location.
+
+COMPONENT 1 is the Coop Id for the first station (in chronologic order) whose 
+            records were joined with those of the HCN site to form a longer time
+	    series.  "------" indicates "not applicable".
+            
+COMPONENT 2 is the Coop Id for the second station (if applicable) whose records 
+            were joined with those of the HCN site to form a longer time series.
+	    
+COMPONENT 3 is the Coop Id for the third station (if applicable) whose records 
+            were joined with those of the HCN site to form a longer time series.
+
+UTC OFFSET  is the time difference between Coordinated Universal Time (UTC) and 
+            local standard time at the station (i.e., the number of hours that 
+	    must be added to local standard time to match UTC).  
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------

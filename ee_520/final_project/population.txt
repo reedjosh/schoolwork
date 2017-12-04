@@ -210,6 +210,9 @@ Jul 1, 2000	282.16 million
 Jun 1, 2000	281.89 million
 May 1, 2000	281.64 million
 Apr 1, 2000	281.42 million
+Mar 1, 2000	281.20 million #fake data
+Feb 1, 2000	281.01 million #fake data
+Jan 1, 2000	280.75 million #fake data
 Dec 1, 1999	280.47 million
 Nov 1, 1999	280.22 million
 Oct 1, 1999	279.95 million
